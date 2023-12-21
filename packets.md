@@ -164,85 +164,143 @@
 
 ## Chat Packets
 
----
-
 ### ChatChannelMemberAddPacket
+
+---
 
 ### ChatChannelMemberRemovePacket
 
+---
+
 ### ChatChannelMessageDeletePacket
+
+---
 
 ### ChatChannelUpdatePacket
 
+---
+
 ### ClientChatChannelCreatePacket
+
+---
 
 ### ClientChatChannelMessageCreatePacket
 
+---
+
 ### ClientChatChannelMessageReadStatePacket
+
+---
 
 ### ClientChatChannelMessageReportPacket
 
+---
+
 ### ClientChatChannelMessagesRetrievePacket
+
+---
 
 ### ClientChatChannelMessageUpdatePacket
 
+---
+
 ### ClientChatChannelMutePacket
+
+---
 
 ### ServerChannelMemberActionResponsePacket
 
+---
+
 ### ServerChatChannelAddPacket
+
+---
 
 ### ServerChatChannelClearPacket
 
+---
+
 ### ServerChatChannelMessagePacket
+
+---
 
 ### ServerChatChannelMessageReportPacket
 
+---
+
 ### ServerChatChannelMessageReportReasonsPacket
+
+---
 
 ### ServerChatChannelRemovePacket
 
-## Checkout Packets
-
 ---
+
+## Checkout Packets
 
 ### ClientCheckoutClaimCoinsPacket
 
+---
+
 ### ClientCheckoutCoinBundlePacket
+
+---
 
 ### ClientCheckoutCosmeticsPacket
 
+---
+
 ### ClientCheckoutDynamicCoinBundlePacket
+
+---
 
 ### ClientCheckoutPartnerCodeRequestDataPacket
 
+---
+
 ### ClientCheckoutStoreBundlePacket
+
+---
 
 ### ServerCheckoutClaimCoinsResponsePacket
 
+---
+
 ### ServerCheckoutPartnerCodeDataPacket
+
+---
 
 ### ServerCheckoutUrlPacket
 
-## Coins Packets
-
 ---
+
+## Coins Packets
 
 ### ClientCoinBundleOptionsPacket
 
+---
+
 ### ClientCoinsBalancePacket
-
-### ServerCoinBundleOptionsPacket
-
-### ServerCoinsBalancePacket
-
-## Connection Packets
 
 ---
 
+### ServerCoinBundleOptionsPacket
+
+---
+
+### ServerCoinsBalancePacket
+
+---
+
+## Connection Packets
+
 ### ClientConnectionDisconnectPacket
 
+---
+
 ### ServerConnectionReconnectPacket
+
+---
 
 ### ConnectionRegisterPacketTypeIdPacket
 
@@ -266,6 +324,8 @@ increments by 1 for each packet registered.
 }
 ```
 
+---
+
 ### ClientConnectionLoginPacket
 
 After connecting to the server, the client must send a
@@ -288,195 +348,316 @@ respond with a [ResponseActionPacket](#connection-packets).
 }
 ```
 
+---
+
 ### ConnectionKeepAlivePacket
 
 The server will send a keep alive packet to the client every ~30 seconds. If the client
 does not respond the server will assume the client is dead.
 
-## Cosmetic Packets
-
 ---
+
+## Cosmetic Packets
 
 ### ClientCosmeticAnimationTriggerPacket
 
+---
+
 ### ClientCosmeticCheckoutPacket
+
+---
 
 ### ClientCosmeticRequestPacket
 
+---
+
 ### ClientCosmeticRequestUnlockStatePacket
+
+---
 
 ### ClientCosmeticsUserEquippedVisibilityTogglePacket
 
+---
+
 ### ServerCosmeticAnimationTriggerPacket
+
+---
 
 ### ServerCosmeticPlayerSettingsPacket
 
+---
+
 ### ServerCosmeticsPopulatePacket
+
+---
 
 ### ServerCosmeticsRevokePurchasePacket
 
+---
+
 ### ServerCosmeticsSkinTexturePacket
+
+---
 
 ### ServerCosmeticsUserEquippedPacket
 
+---
+
 ### ServerCosmeticsUserEquippedVisibilityPacket
+
+---
 
 ### ServerCosmeticsUserUnlockedPacket
 
+---
+
 ### ServerCosmeticTypesPopulatePacket
+
+---
 
 ## Cosmetic Capes Packets
 
----
-
 ### ClientCosmeticCapesUnlockedPacket
+
+---
 
 ## Cosmetic Catagories Packets
 
+### ClientCosmeticCategoriesRequestPacket
+
 ---
 
-### ClientCosmeticCategoriesRequestPacket
 ### ServerCosmeticCategoriesPopulatePacket
+
+---
 
 ## Cosmetic Emote Packets
 
+### ClientCosmeticEmoteWheelSelectPacket
+
 ---
 
-### ClientCosmeticEmoteWheelSelectPacket
 ### ClientCosmeticEmoteWheelUpdatePacket
+
+---
+
 ### ServerCosmeticEmoteWheelPopulatePacket
 
 ## Cosmetic Outfit Packets
 
+### ClientCosmeticOutfitCosmeticSettingsUpdatePacket
+
 ---
 
-### ClientCosmeticOutfitCosmeticSettingsUpdatePacket
 ### ClientCosmeticOutfitCreatePacket
+
+---
+
 ### ClientCosmeticOutfitDeletePacket
+
+---
+
 ### ClientCosmeticOutfitEquippedCosmeticsUpdatePacket
+
+---
+
 ### ClientCosmeticOutfitNameUpdatePacket
+
+---
+
 ### ClientCosmeticOutfitSelectedRequestPacket
+
+---
+
 ### ClientCosmeticOutfitSelectPacket
+
+---
+
 ### ClientCosmeticOutfitSkinUpdatePacket
+
+---
+
 ### ClientCosmeticOutfitUpdateFavoriteStatePacket
+
+---
+
 ### ServerCosmeticOutfitPopulatePacket
+
+---
+
 ### ServerCosmeticOutfitSelectedResponsePacket
+
+---
 
 ## Currency Packets
 
----
-
 ### ClientCurrencyOptionsPacket
+
+---
 
 ### ServerCurrencyOptionsPacket
 
-## Ice Packets
-
 ---
+
+## Ice Packets
 
 ### IceCandidatePacket
 
+---
+
 ### IceSessionPacket
+
+---
 
 ## Media Packets
 
----
-
 ### ClientMediaCreatePacket
+
+---
 
 ### ClientMediaDeleteRequestPacket
 
+---
+
 ### ClientMediaGetUploadUrlPacket
+
+---
 
 ### ClientMediaRequestPacket
 
+---
+
 ### ClientMediaUpdatePacket
+
+---
 
 ### ServerMediaPopulatePacket
 
+---
+
 ### ServerMediaUploadUrlPacket
+
+---
 
 ## Mod Packets
 
----
-
 ### ClientModsAnnouncePacket$Platform
+
+---
 
 ### ClientModsAnnouncePacket
 
+---
+
 ### ServerRevenueSplitPacket
+
+---
 
 ## Multiplayer Packets
 
----
-
 ### ServerMultiplayerJoinServerPacket
+
+---
 
 ## Notices Packets
 
----
-
 ### ClientNoticeDismissPacket
+
+---
 
 ### ClientNoticeRequestPacket
 
+---
+
 ### ServerNoticePopulatePacket
+
+---
 
 ### ServerNoticeRemovePacket
 
-## Pingproxy Packets
-
 ---
+
+## Pingproxy Packets
 
 ### ClientPingProxyPacket
 
+---
+
 ### ServerPingProxyResponsePacket
+
+---
 
 ## Profile Packets
 
----
-
 ### ClientProfileActivityPacket
+
+---
 
 ### ServerProfileActivityPacket
 
+---
+
 ### ServerProfileStatusPacket
+
+---
 
 ## Profile Trustedhosts Packets
 
+### ClientProfileTrustedHostsCreatePacket
+
 ---
 
-### ClientProfileTrustedHostsCreatePacket
 ### ClientProfileTrustedHostsDeletePacket
+
+---
+
 ### ServerProfileTrustedHostsClearPacket
+
+---
+
 ### ServerProfileTrustedHostsPopulatePacket
+
+---
+
 ### ServerProfileTrustedHostsRemovePacket
+
+---
 
 ## Relationships Packets
 
----
-
 ### ClientRelationshipCreatePacket
+
+---
 
 ### RelationshipDeletePacket
 
+---
+
 ### ServerRelationshipCreateFailedResponsePacket
+
+---
 
 ### ServerRelationshipDeletePacket
 
+---
+
 ### ServerRelationshipPopulatePacket
+
+---
 
 ### ServerUuidNameMapPacket
 
+---
+
 ## Relationships Privacy Packets
+
+---
 
 ### FriendRequestPrivacySettingPacket
 
 ---
 
 ## Response Packets
-
----
 
 ### ResponseActionPacket
 
@@ -498,86 +679,128 @@ Server response to a client action.
 }
 ```
 
-## Serverdiscovery Packets
-
 ---
+
+## Serverdiscovery Packets
 
 ### ClientServerDiscoveryRequestPopulatePacket
 
+---
+
 ### ServerServerDiscoveryPopulatePacket
+
+---
 
 ## Skin Packets
 
----
-
 ### ClientSkinCreatePacket
+
+---
 
 ### ClientSkinDeletePacket
 
+---
+
 ### ClientSkinUpdateDataPacket
+
+---
 
 ### ClientSkinUpdateFavoriteStatePacket
 
+---
+
 ### ClientSkinUpdateLastUsedStatePacket
+
+---
 
 ### ClientSkinUpdateNamePacket
 
+---
+
 ### ServerSkinPopulatePacket
+
+---
 
 ## Social Packets
 
----
-
 ### ClientSocialDiscordRequestJoinServerResponsePacket
+
+---
 
 ### SocialDiscordRequestJoinServerPacket
 
+---
+
 ### SocialInviteToServerCancelPacket
+
+---
 
 ### SocialInviteToServerPacket
 
-## Subscription Packets
-
 ---
+
+## Subscription Packets
 
 ### SubscriptionUpdatePacket
 
-## Telemetry Packets
-
 ---
+
+## Telemetry Packets
 
 ### ClientTelemetryPacket
 
-## Upnp Packets
-
 ---
+
+## Upnp Packets
 
 ### ClientUPnPSessionClosePacket
 
+---
+
 ### ClientUPnPSessionCreatePacket
-
-### ClientUPnPSessionInvitesAddPacket
-
-### ClientUPnPSessionInvitesRemovePacket
-
-### ClientUPnPSessionPingProxyUpdatePacket
-
-### ClientUPnPSessionUpdatePacket
-
-### ServerUPnPSessionInviteAddPacket
-
-### ServerUPnPSessionPopulatePacket
-
-### ServerUPnPSessionRemovePacket
-
-## Wardrobe Packets
 
 ---
 
+### ClientUPnPSessionInvitesAddPacket
+
+---
+
+### ClientUPnPSessionInvitesRemovePacket
+
+---
+
+### ClientUPnPSessionPingProxyUpdatePacket
+
+---
+
+### ClientUPnPSessionUpdatePacket
+
+---
+
+### ServerUPnPSessionInviteAddPacket
+
+---
+
+### ServerUPnPSessionPopulatePacket
+
+---
+
+### ServerUPnPSessionRemovePacket
+
+---
+
+## Wardrobe Packets
+
 ### ClientWardrobeSettingsPacket
+
+---
 
 ### ClientWardrobeStoreBundleRequestPacket
 
+---
+
 ### ServerWardrobeSettingsPacket
+
+---
 
 ### ServerWardrobeStoreBundlePacket
