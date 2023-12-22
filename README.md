@@ -8,6 +8,7 @@ to the client, known as P.I.G (Packet Interception GUI).
 ### Documentation
 
 - [Packet Documentation](./docs/packets.md)
+- [Inner Workings](./docs/inner-workings.md)
 - [P.I.G Documentation](./docs/pig.md)
 - [Client Documentation](./docs/client.md)
 
