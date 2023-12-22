@@ -1,7 +1,7 @@
 # Contributing
 
 When contributing to this repository, please first create a branch with a simple name that 
-describes the feature you are working on. For example, if you are working P.I.G, you might 
+describes the feature you are working on. For example, if you are working on P.I.G, you might 
 create a branch called `P.I.G/feature-name`, if it's on the protocol, you might call it
 `protocol/feature-name` and so on.
 
