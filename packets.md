@@ -166,73 +166,502 @@
 
 ### ChatChannelMemberAddPacket
 
+Add member/members to a channel
+
+```json
+{
+  "channelId": long,
+  "members": UUID[]
+}
+```
+
+#### Serialized Schema
+
+```json
+{
+  "a": long,
+  "b": UUID[]
+}
+```
+
 ---
 
 ### ChatChannelMemberRemovePacket
+
+Remove member/members from a channel
+
+```json
+{
+  "channelId": long,
+  "members": UUID[]
+}
+```
+
+#### Serialized Schema
+
+```json
+{
+  "a": long,
+  "b": UUID[]
+}
+```
 
 ---
 
 ### ChatChannelMessageDeletePacket
 
+Client deleting a message
+
+```json
+{
+  "channelId": long,
+  "messageId": long
+}
+```
+
+#### Serialized Schema
+
+```json
+{
+  "a": long,
+  "b": long
+}
+```
+
 ---
 
 ### ChatChannelUpdatePacket
+
+Update an already existing channel's name or topic
+
+```json
+{
+  "channelId": long,
+  "name": string | null,
+  "topic": string | null
+}
+```
+
+#### Serialized Schema
+
+```json
+{
+    "a": long,
+    "b": string | null,
+    "c": string | null
+}
+```
 
 ---
 
 ### ClientChatChannelCreatePacket
 
+Creates a new channel with the given members, or creates a new DM with the given member
+
+```json
+{
+  "type": "ANNOUNCEMENT | TEXT | DIRECT_MESSAGE | GROUP_DIRECT_MESSAGE",
+  "name": string,
+  "members": UUID[]
+}
+```
+
+#### Serialized Schema
+
+```json
+{
+  "a": "ANNOUNCEMENT | TEXT | DIRECT_MESSAGE | GROUP_DIRECT_MESSAGE",
+  "b": string,
+  "c": UUID[]
+}
+```
+
 ---
 
 ### ClientChatChannelMessageCreatePacket
+
+Client sending a message to a channel, or replying to a message in a channel
+
+```json
+{
+  "channelId": long,
+  "content": string,
+  "replyTargetId": long | null
+}
+```
+
+#### Serialized Schema
+
+```json
+{
+  "a": long,
+  "b": string,
+  "c": long | null
+}
+```
 
 ---
 
 ### ClientChatChannelMessageReadStatePacket
 
+Sent when the client reads a new message in a channel
+
+```json
+{
+  "channelId": long,
+  "messageId": long,
+  "state": boolean
+}
+```
+
+#### Serialized Schema
+
+```json
+{
+  "a": long,
+  "b": long,
+  "c": boolean
+}
+```
+
 ---
 
 ### ClientChatChannelMessageReportPacket
+
+Client reports a message in a channel
+
+```json
+{
+  "channelId": long,
+  "messageId": long,
+  "reason": string
+}
+```
+
+#### Serialized Schema
+
+```json
+{
+  "a": long,
+  "b": long,
+  "c": string
+}
+```
 
 ---
 
 ### ClientChatChannelMessagesRetrievePacket
 
+Client requests messages from a channel, can be used to retrieve messages before or after a certain time.
+
+```json
+{
+    "channelId": long,
+    "before": long | null,
+    "after": long | null,
+    "limit": int
+}
+```
+
+#### Serialized Schema
+
+```json
+{
+    "a": long,
+    "b": long | null,
+    "c": long | null,
+    "d": int
+}
+```
+
 ---
 
 ### ClientChatChannelMessageUpdatePacket
+
+When a user edits a message
+
+```json
+{
+    "channelId": long,
+    "messageId": long,
+    "content": string
+}
+```
+
+#### Serialized Schema
+
+```json
+{
+    "a": long,
+    "b": long,
+    "c": string
+}
+```
 
 ---
 
 ### ClientChatChannelMutePacket
 
+When `muted` is `true`, the server wont send "push" notifications to the client for the channel.
+
+```json
+{
+    "channelId": long,
+    "muted": boolean
+}
+```
+
+#### Serialized Schema
+
+```json
+{
+    "a": long,
+    "b": boolean
+}
+```
+
 ---
 
 ### ServerChannelMemberActionResponsePacket
+
+```json
+{
+    "results": [
+      {
+        "UUID": boolean
+      }
+    ]
+}
+```
+
+#### Serialized Schema
+
+```json
+{
+    "a": [
+      {
+        "UUID": boolean
+      }
+    ]
+}
+```
 
 ---
 
 ### ServerChatChannelAddPacket
 
+```json
+{
+  "channels": [
+    {
+      "id": long,
+      "type": "ANNOUNCEMENT | TEXT | DIRECT_MESSAGE | GROUP_DIRECT_MESSAGE",
+      "name": string,
+      "topic": string | null,
+      "settings": {
+        "userLimit": int,
+      },
+      "members": Set<UUID>,
+      "createdInfo": {
+        "at": DateTime,
+        "by": UUID
+      },
+      "closedInfo": {
+        "at": DateTime,
+        "by": UUID,
+        "reason": string,
+      } | null,
+      "muted": boolean
+    }
+  ]
+}
+```
+
+#### Serialized Schema
+
+```json
+{
+    "a": [
+      {
+        "a": long,
+        "b": "ANNOUNCEMENT | TEXT | DIRECT_MESSAGE | GROUP_DIRECT_MESSAGE",
+        "c": string,
+        "d": string | null,
+        "e": {
+          "a": int
+        },
+        "f": Set<UUID>,
+        "g": {
+          "a": DateTime,
+          "b": UUID
+        },
+        "h": {
+          "a": DateTime,
+          "b": UUID,
+          "c": string
+        } | null,
+        "i": boolean
+      }
+    ]
+}
+```
+
 ---
 
 ### ServerChatChannelClearPacket
+
+This has no payload. Not sure why it exists yet.
 
 ---
 
 ### ServerChatChannelMessagePacket
 
+```json
+{
+    "messages": [
+        {
+            "id": long,
+            "channelId": long,
+            "sender": UUID,
+            "contents": string,
+            "read": boolean,
+            "replyTargetId": long | null,
+            "lastEditTime": long | null
+        }
+    ]
+}
+```
+
+#### Serialized Schema
+
+```json
+{
+    "a": [
+        {
+            "a": long,
+            "b": long,
+            "c": UUID,
+            "d": string,
+            "e": boolean,
+            "f": long | null,
+            "g": long | null
+        }
+    ]
+}
+```
+
 ---
 
 ### ServerChatChannelMessageReportPacket
+
+```json
+{
+    "report": {
+        "id": long,
+        "channelId": long,
+        "messageId": long,
+        "reason": string,
+        "createdInfo": {
+            "at": DateTime,
+            "by": UUID
+        },
+        "closed": boolean,
+        "reportVerdict": {
+            "by": string,
+            "at": DateTime,
+            "reason": string | null,
+            "verdict": "NO_ACTION | DELETE_MESSAGES | DELETE_USER_MESSAGES"
+        }, | null
+    }
+}
+```
+
+#### Serialized Schema
+
+```json
+{
+    "a": {
+        "a": long,
+        "b": long,
+        "c": long,
+        "d": string,
+        "e": {
+            "a": DateTime,
+            "b": UUID
+        },
+        "f": boolean,
+        "g": {
+            "a": string,
+            "b": DateTime,
+            "c": string | null,
+            "d": "NO_ACTION | DELETE_MESSAGES | DELETE_USER_MESSAGES"
+        } | null
+    }
+}
+```
 
 ---
 
 ### ServerChatChannelMessageReportReasonsPacket
 
+This is sent to the client when they connect to the server. It contains the reasons that can be used to report a message.
+I'm guessing this is supposed to have multiple languages, but it only has english. (At-least for now)
+
+```json
+{
+    "reasons": {
+      "HARASSMENT": {
+        "en_US": "Bullying / Harassment"
+      },
+      "ILLEGAL_ACTIVITY": {
+        "en_US": "Illegal Activity"
+      },
+      "INAPPROPRIATE_CONTENT": {
+        "en_US": "Inappropriate Content"
+      }
+    }
+}
+```
+
+#### Serialized Schema
+
+```json
+{
+    "a": {
+      "HARASSMENT": {
+        "en_US": "Bullying / Harassment"
+      },
+      "ILLEGAL_ACTIVITY": {
+        "en_US": "Illegal Activity"
+      },
+      "INAPPROPRIATE_CONTENT": {
+        "en_US": "Inappropriate Content"
+      }
+    }
+}
+```
+
 ---
 
 ### ServerChatChannelRemovePacket
+
+```json
+{
+    "channelIds": [
+        long
+    ]
+}
+```
+
+#### Serialized Schema
+
+```json
+{
+    "a": [
+        long
+    ]
+}
+```
 
 ---
 
