@@ -781,7 +781,7 @@ respond with a [ResponseActionPacket](#connection-packets).
 
 ### ConnectionKeepAlivePacket
 
-The server will send a keep alive packet to the client every ~30 seconds. If the client
+The server will send a keep alive packet to the client every ~60 seconds. If the client
 does not respond the server will assume the client is dead.
 
 ---
