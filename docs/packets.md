@@ -896,6 +896,25 @@ does not respond the server will assume the client is dead.
 
 ### ClientCosmeticOutfitSelectedRequestPacket
 
+When a new player joins a server (can be local or remote), the client will 
+send this packet with the players uuid to get the cosmetics for that player.
+
+See [ServerCosmeticOutfitSelectedResponsePacket](#servercosmeticoutfitselectedresponsepacket) for the response.
+
+```json
+{
+  "uuid": UUID
+}
+```
+
+#### Serialized Schema
+
+```json
+{
+  "a": UUID
+}
+```
+
 ---
 
 ### ClientCosmeticOutfitSelectPacket
@@ -915,6 +934,45 @@ does not respond the server will assume the client is dead.
 ---
 
 ### ServerCosmeticOutfitSelectedResponsePacket
+
+The server will send this packet to the client in response to a 
+[ClientCosmeticOutfitSelectedRequestPacket](#clientcosmeticoutfitselectedrequestpacket). 
+Keep in mind that the `equippedCosmetics` field is a map of `CosmeticSlot` to `Cosmetic` name.
+So there can only be 1 entry per `CosmeticSlot`.
+
+```json
+{
+  "uuid": UUID,
+  "skinTexture": string,
+  "equippedCosmetics": {
+    "CAPE": string,
+    "JACKET": string,
+    "LEFT_SLEEVE": string,
+    "RIGHT_SLEEVE": string,
+    "LEFT_PANTS_LEG": string,
+    "RIGHT_PANTS_LEG": string,
+    "HAT": string
+  }
+}
+```
+
+#### Serialized Schema
+
+```json
+{
+  "uuid": UUID,
+  "skinTexture": string,
+  "equippedCosmetics": {
+    "CAPE": string,
+    "JACKET": string,
+    "LEFT_SLEEVE": string,
+    "RIGHT_SLEEVE": string,
+    "LEFT_PANTS_LEG": string,
+    "RIGHT_PANTS_LEG": string,
+    "HAT": string
+  }
+}
+```
 
 ---
 
